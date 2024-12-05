@@ -18,17 +18,10 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className="py-10">
-
-
-                <BmiCalculator></BmiCalculator>
-
-
-
+            <div className="py-10 flex justify-between items-center">
+                <h1 className="text-5xl font-bold">Calculate your<span className="text-cyan-500"> BMI </span>here</h1>
+                <BmiCalculator />
             </div>
-
-
-
 
         </>
 

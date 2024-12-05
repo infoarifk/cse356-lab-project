@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
     return (
         <>
-          <div className="py-5 flex justify-between bg-cyan-200 px-3">
+          <div className="py-5 flex justify-between bg-cyan-300 px-3">
                 <h4 className="text-3xl font-bold">FITNESS TRACKER</h4>
 
                 <div>

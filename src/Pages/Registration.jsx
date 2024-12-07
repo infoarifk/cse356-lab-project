@@ -1,10 +1,11 @@
-/* eslint-disable no-unused-vars */
+
 
 import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../Providers/Authprovider';
+
 import { updateProfile } from 'firebase/auth/cordova';
 import { auth } from '../Firebase/firebase.config';
+import { AuthContext } from '../Providers/AuthProvider';
 
 
 
@@ -26,11 +27,14 @@ const Registration = () => {
             registerUser(userEmail, userPassword)
             .then(result =>{
 
-                 
+                console.log(result);
+                
                 navigate(location?.state ? location.state : '/' );
     
                 updateProfile( auth.currentUser, {
-                    displayName: userName, phoneNumber: userPhone
+                    displayName: userName,
+                    phoneNumber: userPhone
+                    
                 })
               
             })

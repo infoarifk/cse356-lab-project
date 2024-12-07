@@ -6,6 +6,8 @@ import GeneralLayout from "../Layout/GeneralLayout";
 import Home from "../Pages/Home";
 import Registration from "../Pages/Registration";
 import Login from "../Pages/Login";
+import OurPlan from "../Pages/OurPlan";
+import Blog from "../Pages/Blog";
 
 
 
@@ -26,6 +28,14 @@ import Login from "../Pages/Login";
         {
           path: "/login",
           element: <Login></Login>
+        },
+        {
+          path: "/ourplan",
+          element: <OurPlan></OurPlan>
+        },
+        {
+          path: "/blogs",
+          element: <Blog></Blog>
         }
       ]
     },

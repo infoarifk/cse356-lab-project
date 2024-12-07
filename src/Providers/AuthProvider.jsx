@@ -1,21 +1,30 @@
+
 /* eslint-disable react/prop-types */
 /* eslint-disable react-refresh/only-export-components */
 
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { createContext } from "react";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createContext, useEffect, useState } from "react";
 import { auth } from "../Firebase/firebase.config";
 
 
-export const AuthContext = createContext();
+export const AuthContext = createContext(null);
 
 const AuthProvider = ({children}) => {
 
+    const [user, setUser] = useState(null);
 
+    //console.log(user);
+    
+
+
+    //create user
     const registerUser = (userEmail, userPassword)=>{
 
         return createUserWithEmailAndPassword(auth, userEmail, userPassword);
 
     }
+
+    //login
 
     const loginUser = (userEmail, userPassword) =>{
 
@@ -23,10 +32,34 @@ const AuthProvider = ({children}) => {
 
     }
 
+    //logout
+
+    const logoutUser = () => {
+        setUser(null);
+        return signOut(auth);
+    }
+ 
+    //observer
+
+    useEffect(()=>{
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+             
+              setUser(user);
+             
+            } 
+          });
+
+    },[])
+
+
 
     const userInformation = {
             registerUser,
-            loginUser
+            loginUser,
+            user,
+            logoutUser
     }
     
 

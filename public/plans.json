@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "name": "30 Days Plan",
+      "description": "Get in shape with this 30-day fitness program.",
+      "price": "$29.99",
+      "duration": "30 days",
+      "buttonText": "Subscribe"
+    },
+    {
+      "id": 2,
+      "name": "60 Days Plan",
+      "description": "Transform your body in 60 days with personalized training.",
+      "price": "$49.99",
+      "duration": "60 days",
+      "buttonText": "Subscribe"
+    },
+    {
+      "id": 3,
+      "name": "90 Days Plan",
+      "description": "Achieve your fitness goals in 90 days with expert guidance.",
+      "price": "$69.99",
+      "duration": "90 days",
+      "buttonText": "Subscribe"
+    }
+  ]
+  

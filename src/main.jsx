@@ -6,7 +6,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { router } from './Routes/Routes';
-import AuthProvider from './Providers/Authprovider';
+import AuthProvider from './Providers/AuthProvider';
+
 
 
 

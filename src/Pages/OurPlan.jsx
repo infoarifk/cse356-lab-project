@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
+import Contact from "../Components/Contact";
 
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
@@ -67,6 +68,9 @@ const OurPlan = () => {
           </div>
         ))}
       </div>
+
+        <Contact></Contact>
+      
     </div>
   );
 };

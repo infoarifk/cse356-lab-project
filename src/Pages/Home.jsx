@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import BmiCalculator from "../Components/BmiCalculator";
 import Homeblogs from "../Components/Homeblogs";
+import Contact from "../Components/Contact";
 
 
 
@@ -43,6 +44,8 @@ const Home = () => {
                     </button>
                 </Link>
             </div>
+
+            <Contact></Contact>
 
 
            

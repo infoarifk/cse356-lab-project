@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
 import BmiCalculator from "../Components/BmiCalculator";
+import Homeblogs from "../Components/Homeblogs";
 
 
 
@@ -33,6 +34,17 @@ const Home = () => {
             </div>
 
 
+            <Homeblogs></Homeblogs>
+
+            <div className="flex justify-center mb-10">
+                <Link to="/blogs">
+                    <button className="bg-cyan-500 text-white text-lg font-semibold py-2 px-5 rounded shadow hover:bg-cyan-600 transition duration-300">
+                        More Blogs
+                    </button>
+                </Link>
+            </div>
+
+
            
 
         </>
@@ -42,3 +54,5 @@ const Home = () => {
 };
 
 export default Home;
+
+

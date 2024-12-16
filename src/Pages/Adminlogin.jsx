@@ -1,25 +1,29 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 
 const Adminlogin = () => {
-    const adminEmail = "admin@fitnesstracker.com";
-    const adminPass = "12345678";
 
-    const [errorMessage, setErrorMessage] = useState(""); // For showing error message
-    const navigate = useNavigate(); // For redirecting to the dashboard
+    const adminData = useLoaderData();
+    
+    
+    
+
+    const [errorMessage, setErrorMessage] = useState(""); 
+    const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
         const userEmail = e.target.userEmail.value;
         const userPassword = e.target.userPassword.value;
 
-        // Check if the credentials match
-        if (userEmail === adminEmail && userPassword === adminPass) {
-            // Redirect to the dashboard page if credentials are correct
-            navigate("/dashboard");
+        const matchedAdmin = adminData.find(admin => admin.adminEmail === userEmail && admin.password === userPassword);
+        if (matchedAdmin) {
+           
+            localStorage.setItem("isAuthenticated", true);
+            navigate("/admindashboard");
         } else {
-            // Show an error message if credentials are incorrect
+            
             setErrorMessage("Email or password is incorrect");
         }
     };

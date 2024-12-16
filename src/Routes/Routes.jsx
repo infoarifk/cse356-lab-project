@@ -11,6 +11,8 @@ import Blog from "../Pages/Blog";
 import SingleBlog from "../Pages/SingleBlog";
 import Profile from "../Pages/Profile";
 import Adminlogin from "../Pages/Adminlogin";
+import ProtectedRoute from "./ProtectedRoute";
+import Admindashboard from "../Pages/Admindashboard";
 
 
 
@@ -47,14 +49,24 @@ import Adminlogin from "../Pages/Adminlogin";
         {
           path: "/userprofile",
           element: <Profile></Profile>,
-          loader: ()=> fetch('http://localhost:5000/subscribe')
+          loader: ()=> fetch('https://test-server-seven-theta.vercel.app/subscribe')
         }
       ]
     },
 
     {
       path: "/admin",
-      element: <Adminlogin></Adminlogin>
+      element: <Adminlogin></Adminlogin>,
+      loader: ()=> fetch('https://test-server-seven-theta.vercel.app/admin')
+    },
+    {
+      path: '/admindashboard',
+      element:(
+        <ProtectedRoute>
+        <Admindashboard/>
+      </ProtectedRoute>
+      ),
+      loader: ()=> fetch('https://test-server-seven-theta.vercel.app/subscribe')
     }
   ]);
 

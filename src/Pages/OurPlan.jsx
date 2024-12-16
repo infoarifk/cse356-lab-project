@@ -12,7 +12,7 @@ const OurPlan = () => {
 
   useEffect(() => {
     const fetchPlans = async () => {
-      const response = await fetch('/public/plans.json');
+      const response = await fetch('/plans.json');
       const data = await response.json();
       setPlans(data);
     };
@@ -33,7 +33,7 @@ const OurPlan = () => {
         planName: plan.name
       };
   
-      fetch('http://localhost:5000/subscribe', {
+      fetch('https://test-server-seven-theta.vercel.app/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(subscriptionDetails),

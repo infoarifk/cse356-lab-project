@@ -1,10 +1,16 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import { AuthContext } from '../Providers/AuthProvider';
 import { BsPersonCircle } from "react-icons/bs";
 
 const Navbar = () => {
     const { user, logoutUser } = useContext(AuthContext);
+    const navigate = useNavigate(); // Initialize useNavigate
+
+    const handleLogout = () => {
+        logoutUser();  // Perform the logout
+        navigate('/');  // Redirect to the homepage after logout
+    };
 
     return (
         <>
@@ -27,7 +33,6 @@ const Navbar = () => {
                             <div className="dropdown dropdown-end">
                                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                     <div>
-
                                         <BsPersonCircle className="text-4xl" />
                                     </div>
                                 </div>
@@ -38,12 +43,11 @@ const Navbar = () => {
                                         <Link to="/userprofile">
                                             <a className="justify-between">
                                                 Profile
-
                                             </a>
                                         </Link>
                                     </li>
                                     <li><a>Settings</a></li>
-                                    <li><a onClick={logoutUser}>Logout</a></li>
+                                    <li><a onClick={handleLogout}>Logout</a></li> {/* Use handleLogout */}
                                 </ul>
                             </div>
                         ) : (

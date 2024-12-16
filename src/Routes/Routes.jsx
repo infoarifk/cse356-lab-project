@@ -45,7 +45,8 @@ import Profile from "../Pages/Profile";
         },
         {
           path: "/userprofile",
-          element: <Profile></Profile>
+          element: <Profile></Profile>,
+          loader: ()=> fetch('http://localhost:5000/subscribe')
         }
       ]
     },

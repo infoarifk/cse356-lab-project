@@ -2,7 +2,7 @@
 
 import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../Providers/Authprovider';
+import { AuthContext } from '../Providers/AuthProvider';
 
 const Login = () => {
 

@@ -10,6 +10,7 @@ import OurPlan from "../Pages/OurPlan";
 import Blog from "../Pages/Blog";
 import SingleBlog from "../Pages/SingleBlog";
 import Profile from "../Pages/Profile";
+import Adminlogin from "../Pages/Adminlogin";
 
 
 
@@ -50,6 +51,11 @@ import Profile from "../Pages/Profile";
         }
       ]
     },
+
+    {
+      path: "/admin",
+      element: <Adminlogin></Adminlogin>
+    }
   ]);
 
 

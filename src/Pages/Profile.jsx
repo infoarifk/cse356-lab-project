@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { BsPersonCircle } from "react-icons/bs";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useLoaderData } from "react-router-dom";
+import Contact from "../Components/Contact";
 
 const Profile = () => {
     const { user } = useContext(AuthContext);
@@ -36,6 +37,7 @@ const Profile = () => {
     }
 
     return (
+        <>
         <div className="flex flex-col items-center mt-12">
             <div className="flex justify-center items-center w-full max-w-3xl mb-28">
                 <BsPersonCircle className="mr-14 text-6xl" />
@@ -59,7 +61,12 @@ const Profile = () => {
                     </span>
                 </div>
             </div>
+
+
+            
         </div>
+        <Contact className="my-10"></Contact>
+        </>
     );
 };
 
